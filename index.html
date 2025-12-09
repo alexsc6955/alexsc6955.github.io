@@ -2,67 +2,132 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Santiago Rincón</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Santiago Rincón | Tools & Pipelines</title>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto+Mono:wght@300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto+Mono:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Custom styles -->
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body class="bg-black">
-    <canvas id="space" class="w-100 h-100 position-absolute"></canvas>
-    <div class="d-flex flex-column justify-content-between text-light vh-100">
-      <header class="sticky-top border-bottom">
+
+  <body class="bg-black text-light">
+    <!-- Background canvas -->
+    <canvas id="bg-canvas" class="bg-canvas"></canvas>
+
+    <div class="page-wrapper d-flex flex-column min-vh-100">
+      <!-- HEADER -->
+      <header class="sticky-top header-blur border-bottom border-dark">
         <nav class="navbar navbar-expand-lg navbar-dark">
           <div class="container">
-            <!-- <a class="navbar-brand" href="">Santiago</a> -->
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#hero">
+              <span class="brand-mark"></span>
+              <span class="brand-text">
+                <span class="brand-name">Santiago Rincón</span>
+                <span class="brand-subtitle d-none d-sm-block">
+                  Tools & Pipelines · Games / VFX
+                </span>
+              </span>
+            </a>
+
             <button
               class="navbar-toggler"
               type="button"
               data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
+              data-bs-target="#navbarContent"
+              aria-controls="navbarContent"
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
               <span class="navbar-toggler-icon"></span>
             </button>
+
             <div
-              class="collapse navbar-collapse"
-              id="navbarSupportedContent"
+              class="collapse navbar-collapse justify-content-end"
+              id="navbarContent"
             >
-              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <!-- email -->
+              <ul class="navbar-nav me-3 gap-lg-2 text-uppercase small">
                 <li class="nav-item">
-                  <a class="nav-link" title="email" href="">
+                  <a class="nav-link" href="#hero">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#work">Work</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#stack">Stack</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#contact">Contact</a>
+                </li>
+              </ul>
+
+              <ul class="navbar-nav social-links flex-row gap-2">
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    title="email"
+                    href=""
+                    data-contact="email"
+                  >
                     <i class="fas fa-envelope"></i>
                   </a>
                 </li>
-                <!-- github -->
                 <li class="nav-item">
-                  <a class="nav-link" title="github" target="_blank" href="https://github.com/alexsc6955">
+                  <a
+                    class="nav-link"
+                    title="github"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://github.com/alexsc6955"
+                  >
                     <i class="fab fa-github"></i>
                   </a>
                 </li>
-                <!-- linkedin -->
                 <li class="nav-item">
-                  <a class="nav-link" title="linkedin" target="_blank" href="https://linkedin.com/in/alexsc6955">
+                  <a
+                    class="nav-link"
+                    title="linkedin"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://linkedin.com/in/alexsc6955"
+                  >
                     <i class="fab fa-linkedin"></i>
                   </a>
                 </li>
-                <!-- npm -->
                 <li class="nav-item">
-                  <a class="nav-link" title="npm" target="_blank" href="https://www.npmjs.com/~rincorpes">
+                  <a
+                    class="nav-link"
+                    title="npm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.npmjs.com/~rincorpes"
+                  >
                     <i class="fab fa-npm"></i>
                   </a>
                 </li>
@@ -72,72 +137,594 @@
         </nav>
       </header>
 
-      <main class="py-5 py-lg-0 d-flex align-items-center position-relative">
-        <!-- Intro -->
-        <div class="container d-flex flex-column flex-lg-row">
-          <div class="d-flex flex-column w-100 mb-4 mb-lg-0">
-            <h1 class="display-2 fw-bolder mb-4">
-              Santiago <br /> Rincón 
-            </h1>
-            <p class="lead">
-              Software Developer | Open Source Enthusiast | Passionate Self-taught
-            </p>
-            <p>
-              Hey, I'm Santiago, a Venezuelan self-taught software developer based in Medellín, Colombia. I have developed many projects during my 5+ years of experience as a developer, from simple websites to complex web applications.
-            </p>
-            <p>
-              I'm passionate about open source and love contributing to the community. I'm also passionate about learning new technologies and always looking for new challenges.
-            </p>
-            <!-- <a href="#about" class="btn btn-primary w-50">
-              More about me
-            </a> -->
-          </div>
-          <div class="w-100 d-flex flex-column align-items-lg-end">
-            <h2>Projects</h2>
-            <div class="d-flex flex-column text-lg-end">
-              <a
-                href="https://github.com/ProjectPenrose/paradox"
-                class="text-decoration-none"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Penrose Paradox</a
-              >
-              <a
-                href="https://github.com/k2con/masamo-text-editor"
-                class="text-decoration-none"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Masamo Text Editor</a
-              >
-              <a
-                href="https://viewingparty.net"
-                class="text-decoration-none"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Viewing Party</a
-              >
-              <a
-                href="https://github.com/Unizend/lbtc-api"
-                class="text-decoration-none"
-                target="_blank"
-                rel="noopener noreferrer"
-                >LBTC api</a
-              >
+      <!-- MAIN -->
+      <main class="flex-grow-1">
+        <!-- HERO -->
+        <section id="hero" class="hero-section">
+          <div class="container py-5">
+            <div class="row align-items-center gy-4">
+              <!-- LEFT: intro -->
+              <div class="col-lg-7">
+                <p class="eyebrow text-accent mb-2">
+                  Senior Python Developer · Tools & Pipelines
+                </p>
+                <h1 class="display-4 fw-bold mb-3 hero-title">
+                  I tame creative chaos<br class="d-none d-md-block" />
+                  for games, VFX & creators.
+                </h1>
+                <p class="lead mb-3">
+                  I’m Santiago, a Venezuelan dev based in Medellín. I build
+                  frameworks, DCC tools, and internal platforms that let artists
+                  focus on making cool things instead of fighting their
+                  software.
+                </p>
+                <p class="mb-4">
+                  Most of my work lives in the glue layer: scene inspection,
+                  ingest/publish, environment management, logging & monitoring,
+                  ShotGrid / Perforce Python API integrations, and small game /
+                  capture tools that keep productions from catching fire.
+                </p>
+
+                <div class="d-flex flex-wrap gap-3 mb-4">
+                  <a href="#work" class="btn btn-accent">
+                    View selected work
+                  </a>
+                  <a href="#contact" class="btn btn-outline-accent">
+                    Let’s talk tools
+                  </a>
+                </div>
+
+                <div class="d-flex flex-wrap gap-3 small text-muted">
+                  <span class="pill pill-soft">
+                    <i class="fa-solid fa-location-dot me-1"></i>
+                    Medellín · From Venezuela
+                  </span>
+                  <span class="pill pill-soft">
+                    <i class="fa-solid fa-terminal me-1"></i>
+                    Python / DCC tooling
+                  </span>
+                  <span class="pill pill-soft">
+                    <i class="fa-solid fa-gamepad me-1"></i>
+                    Bridging into game dev
+                  </span>
+                </div>
+              </div>
+
+              <!-- RIGHT: "now" card -->
+              <div class="col-lg-5">
+                <div class="card glass-card border-0">
+                  <div class="card-body p-4">
+                    <p class="text-accent text-uppercase small mb-2">
+                      Right now
+                    </p>
+                    <ul class="list-unstyled mb-3">
+                      <li class="mb-3">
+                        <p class="mb-1 fw-semibold">
+                          Senior Python Developer / DCC Team Lead @ ICVR
+                        </p>
+                        <p class="mb-0 small text-muted">
+                          Cross-DCC plugins, scene inspectors, ingest tools, and
+                          Rez-based pipelines for Houdini, Maya, Unreal,
+                          Blender, and DaVinci Resolve, wired into ShotGrid &
+                          Perforce.
+                        </p>
+                      </li>
+                      <li class="mb-3">
+                        <p class="mb-1 fw-semibold">
+                          Building <span class="text-accent">Trivox</span>
+                          – Content Pipeline Conductor
+                        </p>
+                        <p class="mb-0 small text-muted">
+                          Modular Python framework for gameplay capture,
+                          manifest-driven sessions, automated docs, and reusable
+                          CI/CD workflows for creators.
+                        </p>
+                      </li>
+                      <li>
+                        <p class="mb-1 fw-semibold">Pushing into game dev</p>
+                        <p class="mb-0 small text-muted">
+                          C++ + Unreal, mini game engine experiments, and
+                          Python-powered tools for devs & artists.
+                        </p>
+                      </li>
+                    </ul>
+
+                    <hr class="border-dark mb-3" />
+
+                    <p class="small text-muted mb-1">Last side quests</p>
+                    <div class="d-flex flex-wrap gap-2">
+                      <span class="pill pill-outline">Mini Arcade engine</span>
+                      <span class="pill pill-outline">Deja Bounce (Pong)</span>
+                      <span class="pill pill-outline">Space Invaders WIP</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
+
+        <!-- WHAT I DO -->
+        <section id="services" class="section-border">
+          <div class="container py-5">
+            <div class="row mb-4">
+              <div class="col-lg-8">
+                <h2 class="section-title mb-3">What I actually do</h2>
+                <p class="text-muted mb-0">
+                  In short: I build the boring (but critical) stuff so creative
+                  teams can be loud, messy, and brilliant without breaking
+                  production.
+                </p>
+              </div>
+            </div>
+
+            <div class="row gy-4">
+              <div class="col-md-4">
+                <div class="service-card h-100">
+                  <p class="service-icon">
+                    <i class="fa-solid fa-cubes"></i>
+                  </p>
+                  <h3 class="h5 mb-2">Tools & Pipelines</h3>
+                  <p class="small text-muted mb-3">
+                    Python/C++ tools and plugins for Maya, Houdini, Unreal,
+                    Blender, and DaVinci.
+                  </p>
+                  <ul class="small mb-0">
+                    <li>Scene inspection & validation</li>
+                    <li>Ingest / publish workflows</li>
+                    <li>Logging & monitoring for artists</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="service-card h-100">
+                  <p class="service-icon">
+                    <i class="fa-solid fa-network-wired"></i>
+                  </p>
+                  <h3 class="h5 mb-2">Internal Platforms & DevEx</h3>
+                  <p class="small text-muted mb-3">
+                    CLIs, SDKs, and APIs that glue tools together across teams.
+                  </p>
+                  <ul class="small mb-0">
+                    <li>CI/CD and release workflows</li>
+                    <li>Environment & dependency management</li>
+                    <li>Observability around renders & assets</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="service-card h-100">
+                  <p class="service-icon">
+                    <i class="fa-solid fa-video"></i>
+                  </p>
+                  <h3 class="h5 mb-2">Content & Game Automation</h3>
+                  <p class="small text-muted mb-3">
+                    Tools for people who ship content and games on the
+                    internet.
+                  </p>
+                  <ul class="small mb-0">
+                    <li>Gameplay capture orchestration (OBS + games)</li>
+                    <li>Manifest-driven sessions & asset organization</li>
+                    <li>Small game experiments & tooling</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- WORK -->
+        <section id="work" class="section-border">
+          <div class="container py-5">
+            <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-end mb-4 gap-3">
+              <div>
+                <h2 class="section-title mb-2">Selected work</h2>
+                <p class="text-muted mb-0">
+                  A mix of production tools, experimental engines, and older
+                  projects that still pull their weight as portfolio pieces.
+                </p>
+              </div>
+              <a
+                class="small text-accent text-decoration-none"
+                href="https://github.com/alexsc6955"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View more on GitHub
+                <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+              </a>
+            </div>
+
+            <div class="row gy-4">
+              <!-- Trivox -->
+              <div class="col-md-6 col-lg-4">
+                <article class="project-card h-100">
+                  <header class="mb-2 d-flex justify-content-between align-items-start gap-3">
+                    <h3 class="h5 mb-0">Trivox · Content Pipeline Conductor</h3>
+                    <span class="pill pill-outline small">In progress</span>
+                  </header>
+                  <p class="small text-muted mb-2">
+                    Modular Python framework for orchestrating gameplay capture,
+                    manifest-driven sessions, and asset organization. Automated
+                    docs and reusable CI/CD workflows baked in.
+                  </p>
+                  <p class="small text-muted mb-2">
+                    Goal: give solo creators & small teams “big studio”
+                    pipelines without big studio pain.
+                  </p>
+                  <div class="d-flex flex-wrap gap-2 small mb-2">
+                    <a
+                      href="https://trivox.io"
+                      class="text-accent text-decoration-none"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Website
+                      <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+                    </a>
+                    <a
+                      href="https://github.com/trivox-io"
+                      class="text-accent text-decoration-none"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub org
+                      <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+                    </a>
+                  </div>
+                  <div class="d-flex flex-wrap gap-2 small">
+                    <span class="pill pill-soft">Python</span>
+                    <span class="pill pill-soft">CLI & desktop</span>
+                    <span class="pill pill-soft">OBS / capture</span>
+                    <span class="pill pill-soft">Docs & CI/CD</span>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Mini Arcade / Deja Bounce -->
+              <div class="col-md-6 col-lg-4">
+                <article class="project-card h-100">
+                  <header class="mb-2">
+                    <h3 class="h5 mb-0">Mini Arcade + Deja Bounce</h3>
+                    <p class="small text-muted mb-0">
+                      Python-first mini game engine & PS1-style Pong.
+                    </p>
+                  </header>
+                  <p class="small text-muted mb-2">
+                    <strong>mini-arcade-core</strong> and a native SDL2 backend
+                    powering small 2D games, starting with Deja Bounce (a
+                    stylized Pong) and a Space Invaders variant.
+                  </p>
+                  <p class="small text-muted mb-2">
+                    Focus on clean APIs, reusable physics, and tools that feel
+                    more like a framework than a throwaway game jam project.
+                  </p>
+                  <div class="d-flex flex-wrap gap-2 small mb-2">
+                    <a
+                      href="https://pypi.org/project/mini-arcade-core/"
+                      class="text-accent text-decoration-none"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      mini-arcade-core (PyPI)
+                      <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+                    </a>
+                    <a
+                      href="https://pypi.org/project/mini-arcade-native-backend/"
+                      class="text-accent text-decoration-none"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      native backend (PyPI)
+                      <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+                    </a>
+                    <a
+                      href="https://alexsc6955.itch.io/deja-bounce"
+                      class="text-accent text-decoration-none"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Deja Bounce on itch.io
+                      <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+                    </a>
+                  </div>
+                  <div class="d-flex flex-wrap gap-2 small">
+                    <span class="pill pill-soft">Python</span>
+                    <span class="pill pill-soft">C++ / SDL2</span>
+                    <span class="pill pill-soft">Game engine R&D</span>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Penrose Paradox -->
+              <div class="col-md-6 col-lg-4">
+                <article class="project-card h-100">
+                  <header class="mb-2 d-flex justify-content-between align-items-start gap-3">
+                    <h3 class="h5 mb-0">Penrose Paradox</h3>
+                    <a
+                      href="https://github.com/ProjectPenrose/paradox"
+                      class="small text-accent text-decoration-none"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub
+                      <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+                    </a>
+                  </header>
+                  <p class="small text-muted mb-2">
+                    JavaScript library to build reactive components without JSX
+                    – just JavaScript objects. Built to experiment with UI
+                    reactivity from first principles.
+                  </p>
+                  <div class="d-flex flex-wrap gap-2 small mb-2">
+                    <a
+                      href="https://www.npmjs.com/package/penrose-paradox"
+                      class="text-accent text-decoration-none"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      npm package
+                      <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+                    </a>
+                  </div>
+                  <div class="d-flex flex-wrap gap-2 small">
+                    <span class="pill pill-soft">JavaScript</span>
+                    <span class="pill pill-soft">Reactive UI</span>
+                    <span class="pill pill-soft">Frontend R&D</span>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Masamo Text Editor -->
+              <div class="col-md-6 col-lg-4">
+                <article class="project-card h-100">
+                  <header class="mb-2 d-flex justify-content-between align-items-start gap-3">
+                    <h3 class="h5 mb-0">Masamo Text Editor</h3>
+                    <a
+                      href="https://github.com/k2con/masamo-text-editor"
+                      class="small text-accent text-decoration-none"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub
+                      <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+                    </a>
+                  </header>
+                  <p class="small text-muted mb-2">
+                    JavaScript WYSIWYG editor for rich-text content. A playground
+                    for editor UX, extensibility, and “feel” rather than just
+                    another toolbar.
+                  </p>
+                  <div class="d-flex flex-wrap gap-2 small">
+                    <span class="pill pill-soft">JavaScript</span>
+                    <span class="pill pill-soft">Editor UX</span>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Evolving Ideas -->
+              <div class="col-md-6 col-lg-4">
+                <article class="project-card h-100">
+                  <header class="mb-2">
+                    <h3 class="h5 mb-0">Evolving Ideas</h3>
+                    <p class="small text-muted mb-0">
+                      Python assistant for turning messy thoughts into
+                      structured output.
+                    </p>
+                  </header>
+                  <p class="small text-muted mb-2">
+                    Personal R&D tool to help creatives iterate on concepts,
+                    prompts, and storylines using automation instead of just a
+                    blank page.
+                  </p>
+                  <div class="d-flex flex-wrap gap-2 small">
+                    <span class="pill pill-soft">Python</span>
+                    <span class="pill pill-soft">Content tooling</span>
+                  </div>
+                </article>
+              </div>
+
+              <!-- LBTC API -->
+              <div class="col-md-6 col-lg-4">
+                <article class="project-card h-100">
+                  <header class="mb-2 d-flex justify-content-between align-items-start gap-3">
+                    <h3 class="h5 mb-0">LBTC API (2018)</h3>
+                    <a
+                      href="https://github.com/Unizend/lbtc-api"
+                      class="small text-accent text-decoration-none"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub
+                      <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+                    </a>
+                  </header>
+                  <p class="small text-muted mb-2">
+                    Node.js API wrapper for LocalBitcoins. Outdated now, but a
+                    solid example of early backend work and how I’ve been
+                    thinking about APIs for a while.
+                  </p>
+                  <div class="d-flex flex-wrap gap-2 small mb-2">
+                    <a
+                      href="https://www.npmjs.com/package/lbtc-api"
+                      class="text-accent text-decoration-none"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      npm package
+                      <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+                    </a>
+                  </div>
+                  <div class="d-flex flex-wrap gap-2 small">
+                    <span class="pill pill-soft">Node.js</span>
+                    <span class="pill pill-soft">REST APIs</span>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- STACK -->
+        <section id="stack" class="section-border">
+          <div class="container py-5">
+            <div class="row mb-4">
+              <div class="col-lg-8">
+                <h2 class="section-title mb-2">Stack & toys</h2>
+                <p class="text-muted mb-0">
+                  The stuff I reach for a lot, plus a few things I’m leveling up
+                  next.
+                </p>
+              </div>
+            </div>
+
+            <div class="row gy-4">
+              <div class="col-md-6 col-lg-4">
+                <h3 class="h6 text-uppercase text-muted mb-2">Languages</h3>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="pill pill-soft">Python</span>
+                  <span class="pill pill-soft">JavaScript</span>
+                  <span class="pill pill-soft">TypeScript</span>
+                  <span class="pill pill-soft">Node.js</span>
+                  <span class="pill pill-soft">C++ (learning)</span>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4">
+                <h3 class="h6 text-uppercase text-muted mb-2">DCCs & Engines</h3>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="pill pill-soft">Maya</span>
+                  <span class="pill pill-soft">Houdini</span>
+                  <span class="pill pill-soft">Blender</span>
+                  <span class="pill pill-soft">Unreal Engine</span>
+                  <span class="pill pill-soft">DaVinci Resolve</span>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4">
+                <h3 class="h6 text-uppercase text-muted mb-2">
+                  Backend & Infra
+                </h3>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="pill pill-soft">Django</span>
+                  <span class="pill pill-soft">FastAPI</span>
+                  <span class="pill pill-soft">Docker</span>
+                  <span class="pill pill-soft">GitHub Actions</span>
+                  <span class="pill pill-soft">MySQL / PostgreSQL</span>
+                  <span class="pill pill-soft">MongoDB</span>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4">
+                <h3 class="h6 text-uppercase text-muted mb-2">Tools & UX</h3>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="pill pill-soft">Qt / PySide</span>
+                  <span class="pill pill-soft">React</span>
+                  <span class="pill pill-soft">Bootstrap</span>
+                  <span class="pill pill-soft">WebSockets</span>
+                  <span class="pill pill-soft">ShotGrid Python API</span>
+                  <span class="pill pill-soft">Perforce Python API</span>
+                  <span class="pill pill-soft">Deadline</span>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4">
+                <h3 class="h6 text-uppercase text-muted mb-2">Building next</h3>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="pill pill-soft">Software architecture</span>
+                  <span class="pill pill-soft">Data & ML basics</span>
+                  <span class="pill pill-soft">Unreal gameplay systems</span>
+                  <span class="pill pill-soft">Better dev tools</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section-border">
+          <div class="container py-5">
+            <div class="row gy-4 align-items-center">
+              <div class="col-lg-7">
+                <h2 class="section-title mb-3">Let’s build something useful</h2>
+                <p class="text-muted mb-3">
+                  If you’re working on tools & pipelines for games / VFX,
+                  internal platforms for creative teams, or a small studio that
+                  wants “big studio” workflows without the drama, we’ll get
+                  along.
+                </p>
+                <p class="text-muted mb-4">
+                  I’m happy to chat about roles, collaborations, or weird
+                  game-adjacent experiments where Python is allowed to do
+                  dangerous amounts of work.
+                </p>
+
+                <div class="d-flex flex-wrap gap-3">
+                  <a
+                    href=""
+                    data-contact="email"
+                    class="btn btn-accent d-inline-flex align-items-center gap-2"
+                  >
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Email me
+                  </a>
+
+                  <a
+                    href="https://linkedin.com/in/alexsc6955"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-outline-accent d-inline-flex align-items-center gap-2"
+                  >
+                    <i class="fab fa-linkedin"></i>
+                    Connect on LinkedIn
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-lg-5">
+                <div class="card glass-card border-0">
+                  <div class="card-body p-4 small">
+                    <p class="text-accent text-uppercase mb-2">
+                      TL;DR, who am I?
+                    </p>
+                    <ul class="mb-0">
+                      <li>Senior Python dev in the content creation world.</li>
+                      <li>Tooling & pipeline brain with a goth / game kid soul.</li>
+                      <li>Big fan of clean APIs, good logs, and fewer 3am pages.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
-      <footer class="border-top bg-black">
-        <div class="container text-end py-3">
-          <div class="row">
-            <div class="col-12">
-              <p class="m-0">&copy;2023 - Santiago Rincón</p>
-            </div>
-          </div>
+      <!-- FOOTER -->
+      <footer class="border-top border-dark py-3 footer">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 small text-muted">
+          <span>&copy; <span id="year"></span> · Santiago Rincón</span>
+          <span>Built with Python energy and a bit of chaos.</span>
         </div>
       </footer>
+
+      <!-- Watcher / background process -->
+      <button
+        class="watcher"
+        type="button"
+        aria-label="Background process watcher"
+      >
+        <span class="watcher-core"></span>
+        <span class="watcher-label" id="watcher-label">Idle</span>
+        <span class="watcher-tooltip" id="watcher-tooltip">
+          Background process: idle
+        </span>
+      </button>
     </div>
+
+    <!-- Scripts -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

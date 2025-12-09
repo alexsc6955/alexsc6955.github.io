@@ -1,163 +1,191 @@
-const STAR_COLOR = "#fff";
-const STAR_SIZE = 3;
-const STAR_MIN_SCALE = 0.2;
-const OVERFLOW_THRESHOLD = 50;
-const STAR_COUNT = (window.innerWidth + window.innerHeight) / 8;
+// === BACKGROUND NETWORK CANVAS ========================================
 
-const canvas = document.querySelector("canvas");
-const context = canvas.getContext("2d");
+const canvas = document.getElementById("bg-canvas");
+const ctx = canvas.getContext("2d");
 
-let scale = 1,
-    width,
-    height;
+let width = 0;
+let height = 0;
+let scale = 1;
 
-let stars = [];
+const NODE_COUNT = 70;
+const MAX_DISTANCE = 240;
+const nodes = [];
 
-let pointerX,
-    pointerY;
-
-let velocity = { x: 0, y: 0, tx: 0, ty: 0, z: 0.002 };
-
-let touchInput = false;
-
-generate();
-resize();
-step();
-
-window.onresize = resize;
-
-function generate() {
-  for (let i = 0; i < STAR_COUNT; i++) {
-    stars.push({
-      x: 0,
-      y: 0,
-      z: STAR_MIN_SCALE + Math.random() * (1 - STAR_MIN_SCALE) });
-
-  }
-}
-
-function placeStar(star) {
-  star.x = Math.random() * width;
-  star.y = Math.random() * height;
-}
-
-function recycleStar(star) {
-  let direction = "z";
-
-  let vx = Math.abs(velocity.x),
-      vy = Math.abs(velocity.y);
-
-  if (vx > 1 || vy > 1) {
-    let axis;
-
-    if (vx > vy) axis = Math.random() < vx / (vx + vy) ? "h" : "v";else
-    axis = Math.random() < vy / (vx + vy) ? "v" : "h";
-
-    if (axis === "h") {
-      direction = velocity.x > 0 ? "l" : "r";
-    } else
-    {
-      direction = velocity.y > 0 ? "t" : "b";
-    }
-  }
-
-  star.z = STAR_MIN_SCALE + Math.random() * (1 - STAR_MIN_SCALE);
-
-  if (direction === "z") {
-    star.z = 0.1;
-    star.x = Math.random() * width;
-    star.y = Math.random() * height;
-  } else
-  if (direction === "l") {
-    star.x = -OVERFLOW_THRESHOLD;
-    star.y = height * Math.random();
-  } else
-  if (direction === "r") {
-    star.x = width + OVERFLOW_THRESHOLD;
-    star.y = height * Math.random();
-  } else
-  if (direction === "t") {
-    star.x = width * Math.random();
-    star.y = -OVERFLOW_THRESHOLD;
-  } else
-  if (direction === "b") {
-    star.x = width * Math.random();
-    star.y = height + OVERFLOW_THRESHOLD;
-  }
-}
-
-function resize() {
+function resizeCanvas() {
   scale = window.devicePixelRatio || 1;
-
   width = window.innerWidth * scale;
   height = window.innerHeight * scale;
 
   canvas.width = width;
   canvas.height = height;
 
-  stars.forEach(placeStar);
+  // If nodes array is empty (first run), populate
+  if (!nodes.length) {
+    for (let i = 0; i < NODE_COUNT; i++) {
+      nodes.push(createNode());
+    }
+  } else {
+    // Reposition existing nodes randomly on resize
+    for (const node of nodes) {
+      node.x = Math.random() * width;
+      node.y = Math.random() * height;
+    }
+  }
 }
 
-function step() {
-  context.clearRect(0, 0, width, height);
-
-  update();
-  render();
-
-  requestAnimationFrame(step);
+function createNode() {
+  const speed = 0.08 + Math.random() * 0.12; // slow and subtle
+  const angle = Math.random() * Math.PI * 2;
+  return {
+    x: Math.random() * width,
+    y: Math.random() * height,
+    vx: Math.cos(angle) * speed * scale,
+    vy: Math.sin(angle) * speed * scale,
+  };
 }
 
-function update() {
-  velocity.tx *= 0.96;
-  velocity.ty *= 0.96;
+function updateNodes() {
+  for (const node of nodes) {
+    node.x += node.vx;
+    node.y += node.vy;
 
-  velocity.x += (velocity.tx - velocity.x) * 0.8;
-  velocity.y += (velocity.ty - velocity.y) * 0.8;
+    // bounce on edges
+    if (node.x < 0 || node.x > width) node.vx *= -1;
+    if (node.y < 0 || node.y > height) node.vy *= -1;
+  }
+}
 
-  stars.forEach(star => {
-    star.x += velocity.x * star.z;
-    star.y += velocity.y * star.z;
+function renderNetwork() {
+  ctx.clearRect(0, 0, width, height);
 
-    star.x += (star.x - width / 2) * velocity.z * star.z;
-    star.y += (star.y - height / 2) * velocity.z * star.z;
-    star.z += velocity.z;
+  // Draw connections
+  for (let i = 0; i < nodes.length; i++) {
+    for (let j = i + 1; j < nodes.length; j++) {
+      const a = nodes[i];
+      const b = nodes[j];
 
-    // recycle when out of bounds
-    if (
-    star.x < -OVERFLOW_THRESHOLD ||
-    star.x > width + OVERFLOW_THRESHOLD ||
-    star.y < -OVERFLOW_THRESHOLD ||
-    star.y > height + OVERFLOW_THRESHOLD)
+      const dx = a.x - b.x;
+      const dy = a.y - b.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+
+      if (dist < MAX_DISTANCE * scale) {
+        const alpha = 1 - dist / (MAX_DISTANCE * scale);
+
+        ctx.beginPath();
+        ctx.moveTo(a.x, a.y);
+        ctx.lineTo(b.x, b.y);
+        ctx.strokeStyle = `rgba(56, 189, 248, ${alpha * 0.45})`;
+        ctx.lineWidth = 0.8 * scale;
+        ctx.stroke();
+      }
+    }
+  }
+
+  // Draw nodes
+  for (const node of nodes) {
+    ctx.beginPath();
+    ctx.arc(node.x, node.y, 1.5 * scale, 0, Math.PI * 2);
+    ctx.fillStyle = "rgba(248, 250, 252, 0.85)";
+    ctx.fill();
+
+    // subtle glow / accent
+    ctx.beginPath();
+    ctx.arc(node.x, node.y, 3.5 * scale, 0, Math.PI * 2);
+    ctx.strokeStyle = "rgba(56, 189, 248, 0.25)";
+    ctx.lineWidth = 0.5 * scale;
+    ctx.stroke();
+  }
+}
+
+function animate() {
+  updateNodes();
+  renderNetwork();
+  requestAnimationFrame(animate);
+}
+
+// === CONTACT SETUP =====================================================
+
+function setupEmailLinks() {
+  // Obfuscate slightly to dodge basic scrapers
+  const user = "rincorpes";
+  const domain = "gmail.com";
+
+  const emailLinks = document.querySelectorAll("[data-contact='email']");
+  const href = `mailto:${user}@${domain}`;
+
+  emailLinks.forEach((el) => {
+    el.href = href;
+  });
+}
+
+function setupYear() {
+  const yearEl = document.getElementById("year");
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+}
+
+// === ARG PET / BACKGROUND PROCESS =======================================
+
+function setupWatcher() {
+  const pet = document.querySelector(".watcher");
+  const labelEl = document.getElementById("watcher-label");
+  const tooltipEl = document.getElementById("watcher-tooltip");
+
+  if (!pet || !labelEl || !tooltipEl) return;
+
+  const states = [
     {
-      recycleStar(star);
+      label: "Idle",
+      hint: "Background process: listening for anomalies...",
+    },
+    {
+      label: "Syncing",
+      hint: "Loop 03/07 – this isn’t the first time you load this page.",
+    },
+    {
+      label: "Watching",
+      hint: "Keeping an eye on tools, logs, and a few secrets.",
+    },
+    {
+      label: "Glitched",
+      hint: "If this feels familiar, it probably is.",
+    },
+  ];
+
+  let stateIndex = 0;
+  let clicks = 0;
+
+  function applyState() {
+    const state = states[stateIndex];
+    labelEl.textContent = state.label;
+    tooltipEl.textContent = state.hint;
+  }
+
+  pet.addEventListener("click", () => {
+    clicks += 1;
+    stateIndex = (stateIndex + 1) % states.length;
+    applyState();
+
+    if (clicks === 5) {
+      // tiny ARG hint in the console
+      console.log("%c[ARG]", "color:#38bdf8;font-weight:bold;");
+      console.log("Background process detected a pattern.");
+      console.log("Loop 03/07 · You were here before.");
     }
   });
+
+  applyState();
 }
 
-function render() {
-  stars.forEach(star => {
-    context.beginPath();
-    context.lineCap = "round";
-    context.lineWidth = STAR_SIZE * star.z * scale;
-    context.strokeStyle = STAR_COLOR;
-    context.globalAlpha = STAR_MIN_SCALE * star.z;
-    context.moveTo(star.x, star.y);
-    var tailX = velocity.x * 2,
-        tailY = velocity.y * 2;
+// === INIT ===============================================================
 
-    // stroke() wont work on an invisible line
-    if (Math.abs(tailX) < 0.1) tailX = 0.5;
-    if (Math.abs(tailY) < 0.1) tailY = 0.5;
+window.addEventListener("resize", resizeCanvas);
 
-    context.lineTo(star.x + tailX, star.y + tailY);
-    context.stroke();
-  });
-}
-
-window.onload = function() {
-  const user = "rincorpes";
-  const domain = "gemail.com";
-  const element = document.querySelector("[title='email']");
-
-  element.href = `mailto:${user}@${domain}`;
-};
+window.addEventListener("load", () => {
+  resizeCanvas();
+  animate();
+  setupEmailLinks();
+  setupYear();
+  setupWatcher();
+});
