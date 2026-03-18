@@ -7,8 +7,8 @@ let width = 0;
 let height = 0;
 let scale = 1;
 
-const NODE_COUNT = 70;
-const MAX_DISTANCE = 240;
+const NODE_COUNT = 58;
+const MAX_DISTANCE = 220;
 const nodes = [];
 
 function resizeCanvas() {
@@ -74,7 +74,7 @@ function renderNetwork() {
         ctx.beginPath();
         ctx.moveTo(a.x, a.y);
         ctx.lineTo(b.x, b.y);
-        ctx.strokeStyle = `rgba(56, 189, 248, ${alpha * 0.45})`;
+        ctx.strokeStyle = `rgba(124, 92, 255, ${alpha * 0.22})`;
         ctx.lineWidth = 0.8 * scale;
         ctx.stroke();
       }
@@ -85,13 +85,13 @@ function renderNetwork() {
   for (const node of nodes) {
     ctx.beginPath();
     ctx.arc(node.x, node.y, 1.5 * scale, 0, Math.PI * 2);
-    ctx.fillStyle = "rgba(248, 250, 252, 0.85)";
+    ctx.fillStyle = "rgba(245, 242, 235, 0.5)";
     ctx.fill();
 
-    // subtle glow / accent
+    // restrained secondary glow
     ctx.beginPath();
     ctx.arc(node.x, node.y, 3.5 * scale, 0, Math.PI * 2);
-    ctx.strokeStyle = "rgba(56, 189, 248, 0.25)";
+    ctx.strokeStyle = "rgba(106, 169, 255, 0.1)";
     ctx.lineWidth = 0.5 * scale;
     ctx.stroke();
   }
@@ -125,7 +125,7 @@ function setupYear() {
   }
 }
 
-// === ARG PET / BACKGROUND PROCESS =======================================
+// === SYSTEM MONITOR =====================================================
 
 function setupWatcher() {
   const pet = document.querySelector(".watcher");
@@ -137,24 +137,23 @@ function setupWatcher() {
   const states = [
     {
       label: "Idle",
-      hint: "Background process: listening for anomalies...",
+      hint: "System monitor: nominal.",
     },
     {
-      label: "Syncing",
-      hint: "Loop 03/07 – this isn’t the first time you load this page.",
+      label: "Tracing",
+      hint: "Tracing signals across projects, links, and proof surfaces.",
     },
     {
-      label: "Watching",
-      hint: "Keeping an eye on tools, logs, and a few secrets.",
+      label: "Resolving",
+      hint: "Dependencies stable. Workflow graph responding as expected.",
     },
     {
-      label: "Glitched",
-      hint: "If this feels familiar, it probably is.",
+      label: "Executing",
+      hint: "Status: building systems that reduce friction and ship cleanly.",
     },
   ];
 
   let stateIndex = 0;
-  let clicks = 0;
 
   function applyState() {
     const state = states[stateIndex];
@@ -163,16 +162,8 @@ function setupWatcher() {
   }
 
   pet.addEventListener("click", () => {
-    clicks += 1;
     stateIndex = (stateIndex + 1) % states.length;
     applyState();
-
-    if (clicks === 5) {
-      // tiny ARG hint in the console
-      console.log("%c[ARG]", "color:#38bdf8;font-weight:bold;");
-      console.log("Background process detected a pattern.");
-      console.log("Loop 03/07 · You were here before.");
-    }
   });
 
   applyState();

@@ -6,13 +6,13 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Santiago Rincón | Tools & Pipelines</title>
+    <title>Santiago Rincón | Senior Software Engineer</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto+Mono:wght@300;400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
 
@@ -38,11 +38,9 @@
   </head>
 
   <body class="bg-black text-light">
-    <!-- Background canvas -->
     <canvas id="bg-canvas" class="bg-canvas"></canvas>
 
     <div class="page-wrapper d-flex flex-column min-vh-100">
-      <!-- HEADER -->
       <header class="sticky-top header-blur border-bottom border-dark">
         <nav class="navbar navbar-expand-lg navbar-dark">
           <div class="container">
@@ -51,7 +49,7 @@
               <span class="brand-text">
                 <span class="brand-name">Santiago Rincón</span>
                 <span class="brand-subtitle d-none d-sm-block">
-                  Tools & Pipelines · Games / VFX
+                  AI tools · workflow systems · internal platforms
                 </span>
               </span>
             </a>
@@ -74,10 +72,16 @@
             >
               <ul class="navbar-nav me-3 gap-lg-2 text-uppercase small">
                 <li class="nav-item">
-                  <a class="nav-link" href="#hero">About</a>
+                  <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#build">Build</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#work">Work</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#proof">Proof</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#stack">Stack</a>
@@ -137,40 +141,58 @@
         </nav>
       </header>
 
-      <!-- MAIN -->
       <main class="flex-grow-1">
-        <!-- HERO -->
         <section id="hero" class="hero-section">
           <div class="container py-5">
             <div class="row align-items-center gy-4">
-              <!-- LEFT: intro -->
               <div class="col-lg-7">
-                <p class="eyebrow text-accent mb-2">
-                  Senior Python Developer · Tools & Pipelines
+                <p class="eyebrow text-accent mb-3">
+                  Senior engineer · AI systems · tooling · product-minded execution
                 </p>
                 <h1 class="display-4 fw-bold mb-3 hero-title">
-                  I tame creative chaos<br class="d-none d-md-block" />
-                  for games, VFX & creators.
+                  Senior Software Engineer building AI-powered tools and
+                  workflow systems
                 </h1>
                 <p class="lead mb-3">
-                  I’m Santiago, a Venezuelan dev based in Medellín. I build
-                  frameworks, DCC tools, and internal platforms that let artists
-                  focus on making cool things instead of fighting their
-                  software.
+                  I design internal platforms, developer tooling, and
+                  creative/game-tech systems that reduce friction and help teams
+                  ship faster.
                 </p>
-                <p class="mb-4">
-                  Most of my work lives in the glue layer: scene inspection,
-                  ingest/publish, environment management, logging & monitoring,
-                  ShotGrid / Perforce Python API integrations, and small game /
-                  capture tools that keep productions from catching fire.
+                <p class="mb-4 hero-copy">
+                  With 9+ years of hands-on development experience and 6 years
+                  of professional experience, most of my work has centered on
+                  internal tools, workflow automation, and the systems behind
+                  how teams actually get work done. Lately, I&apos;m leaning
+                  harder into AI engineering, pre-production tooling, developer
+                  workflows, and software for creative and game development
+                  teams.
                 </p>
 
+                <div class="hero-metrics row g-3 mb-4">
+                  <div class="col-sm-4">
+                    <div class="metric-card">
+                      <span class="metric-label">Hands-on</span>
+                      <strong>9+ years</strong>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="metric-card">
+                      <span class="metric-label">Professional</span>
+                      <strong>6 years</strong>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="metric-card">
+                      <span class="metric-label">Focus</span>
+                      <strong>Systems that ship</strong>
+                    </div>
+                  </div>
+                </div>
+
                 <div class="d-flex flex-wrap gap-3 mb-4">
-                  <a href="#work" class="btn btn-accent">
-                    View selected work
-                  </a>
+                  <a href="#work" class="btn btn-accent">View Projects</a>
                   <a href="#contact" class="btn btn-outline-accent">
-                    Let’s talk tools
+                    Let&apos;s Connect
                   </a>
                 </div>
 
@@ -181,61 +203,85 @@
                   </span>
                   <span class="pill pill-soft">
                     <i class="fa-solid fa-terminal me-1"></i>
-                    Python / DCC tooling
+                    Tools engineering
+                  </span>
+                  <span class="pill pill-soft">
+                    <i class="fa-solid fa-robot me-1"></i>
+                    AI-driven workflows
                   </span>
                   <span class="pill pill-soft">
                     <i class="fa-solid fa-gamepad me-1"></i>
-                    Bridging into game dev
+                    Creative tech &amp; game tooling
                   </span>
                 </div>
               </div>
 
-              <!-- RIGHT: "now" card -->
               <div class="col-lg-5">
-                <div class="card glass-card border-0">
+                <div class="card glass-card border-0 hero-surface">
                   <div class="card-body p-4">
-                    <p class="text-accent text-uppercase small mb-2">
-                      Right now
-                    </p>
+                    <p class="surface-label text-accent mb-3">Current focus</p>
+
+                    <div class="signal-panel mb-4">
+                      <div class="signal-row">
+                        <span class="signal-key">Flagship</span>
+                        <span class="signal-value">Trivox ecosystem</span>
+                      </div>
+                      <div class="signal-row">
+                        <span class="signal-key">In flight</span>
+                        <span class="signal-value">Mini Arcade releases</span>
+                      </div>
+                      <div class="signal-row">
+                        <span class="signal-key">R&amp;D</span>
+                        <span class="signal-value">Ashframe / llmix</span>
+                      </div>
+                      <div class="signal-row">
+                        <span class="signal-key">Direction</span>
+                        <span class="signal-value">AI + workflow systems</span>
+                      </div>
+                    </div>
+
                     <ul class="list-unstyled mb-3">
                       <li class="mb-3">
                         <p class="mb-1 fw-semibold">
-                          Senior Python Developer / DCC Team Lead @ ICVR
+                          Building <span class="text-accent">Trivox</span> as a
+                          flagship ecosystem
                         </p>
                         <p class="mb-0 small text-muted">
-                          Cross-DCC plugins, scene inspectors, ingest tools, and
-                          Rez-based pipelines for Houdini, Maya, Unreal,
-                          Blender, and DaVinci Resolve, wired into ShotGrid &
-                          Perforce.
+                          A home for AI-powered tooling, workflow systems,
+                          capture automation, and reusable platform thinking for
+                          creators and small teams.
                         </p>
                       </li>
                       <li class="mb-3">
                         <p class="mb-1 fw-semibold">
-                          Building <span class="text-accent">Trivox</span>
-                          – Content Pipeline Conductor
+                          Shipping Mini Arcade and small game releases
                         </p>
                         <p class="mb-0 small text-muted">
-                          Modular Python framework for gameplay capture,
-                          manifest-driven sessions, automated docs, and reusable
-                          CI/CD workflows for creators.
+                          Using engine and release work as a real testbed for
+                          game tooling, reusable architecture, and lightweight
+                          shipping loops.
                         </p>
                       </li>
                       <li>
-                        <p class="mb-1 fw-semibold">Pushing into game dev</p>
+                        <p class="mb-1 fw-semibold">
+                          Exploring AI-driven tooling for practical creative
+                          workflows
+                        </p>
                         <p class="mb-0 small text-muted">
-                          C++ + Unreal, mini game engine experiments, and
-                          Python-powered tools for devs & artists.
+                          Turning ideation, pre-production, and workflow support
+                          into durable tools rather than one-off demos.
                         </p>
                       </li>
                     </ul>
 
                     <hr class="border-dark mb-3" />
 
-                    <p class="small text-muted mb-1">Last side quests</p>
+                    <p class="surface-label text-muted mb-2">Where I add value</p>
                     <div class="d-flex flex-wrap gap-2">
-                      <span class="pill pill-outline">Mini Arcade engine</span>
-                      <span class="pill pill-outline">Deja Bounce (Pong)</span>
-                      <span class="pill pill-outline">Space Invaders WIP</span>
+                      <span class="pill pill-outline">Internal platforms</span>
+                      <span class="pill pill-outline">Developer tooling</span>
+                      <span class="pill pill-outline">AI systems</span>
+                      <span class="pill pill-outline">Game-tech workflows</span>
                     </div>
                   </div>
                 </div>
@@ -244,16 +290,58 @@
           </div>
         </section>
 
-        <!-- WHAT I DO -->
-        <section id="services" class="section-border">
+        <section id="about" class="section-border">
+          <div class="container py-5">
+            <div class="row gy-4 align-items-start">
+              <div class="col-lg-7">
+                <p class="section-kicker mb-2">About</p>
+                <h2 class="section-title mb-3">Engineering with systems-thinking energy</h2>
+                <p class="text-muted mb-3">
+                  I&apos;m a software engineer focused on tools engineering:
+                  internal platforms, developer tooling, workflow automation,
+                  and practical systems that make teams faster without making
+                  their work harder. My background spans games, creative tech,
+                  and VFX, but the through-line is consistent: build software
+                  that removes friction and holds up under real production use.
+                </p>
+                <p class="text-muted mb-0">
+                  I care about product-minded engineering as much as technical
+                  correctness. That means clean APIs, reliable automation,
+                  useful interfaces, and systems that are maintainable by the
+                  people who depend on them. The goal is simple: make
+                  developers&apos; and creators&apos; lives easier with tools
+                  that feel solid, precise, and worth adopting.
+                </p>
+              </div>
+
+              <div class="col-lg-5">
+                <div class="card glass-card border-0">
+                  <div class="card-body p-4 small">
+                    <p class="surface-label text-accent mb-3">At a glance</p>
+                    <ul class="list-clean mb-0">
+                      <li>9+ years of hands-on development experience.</li>
+                      <li>6 years of professional software engineering work.</li>
+                      <li>Strongest in internal tools, platforms, and automation.</li>
+                      <li>Building deeper into AI, game tech, and creative workflows.</li>
+                      <li>Product-minded systems for developers and creators.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="build" class="section-border">
           <div class="container py-5">
             <div class="row mb-4">
               <div class="col-lg-8">
-                <h2 class="section-title mb-3">What I actually do</h2>
+                <p class="section-kicker mb-2">Capabilities</p>
+                <h2 class="section-title mb-3">What I build</h2>
                 <p class="text-muted mb-0">
-                  In short: I build the boring (but critical) stuff so creative
-                  teams can be loud, messy, and brilliant without breaking
-                  production.
+                  Software that turns messy workflows into repeatable systems,
+                  gives teams better leverage, and keeps technical complexity
+                  from becoming operational drag.
                 </p>
               </div>
             </div>
@@ -262,17 +350,18 @@
               <div class="col-md-4">
                 <div class="service-card h-100">
                   <p class="service-icon">
-                    <i class="fa-solid fa-cubes"></i>
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
                   </p>
-                  <h3 class="h5 mb-2">Tools & Pipelines</h3>
+                  <h3 class="h5 mb-2">AI &amp; Workflow Systems</h3>
                   <p class="small text-muted mb-3">
-                    Python/C++ tools and plugins for Maya, Houdini, Unreal,
-                    Blender, and DaVinci.
+                    AI-assisted tooling and workflow layers that reduce
+                    repetitive work, preserve context, and help teams move from
+                    idea to execution faster.
                   </p>
-                  <ul class="small mb-0">
-                    <li>Scene inspection & validation</li>
-                    <li>Ingest / publish workflows</li>
-                    <li>Logging & monitoring for artists</li>
+                  <ul class="list-clean small mb-0">
+                    <li>Workflow orchestration and automation.</li>
+                    <li>Pre-production and ideation support tools.</li>
+                    <li>Practical AI features packaged as usable systems.</li>
                   </ul>
                 </div>
               </div>
@@ -282,14 +371,16 @@
                   <p class="service-icon">
                     <i class="fa-solid fa-network-wired"></i>
                   </p>
-                  <h3 class="h5 mb-2">Internal Platforms & DevEx</h3>
+                  <h3 class="h5 mb-2">Internal Platforms &amp; Developer Tooling</h3>
                   <p class="small text-muted mb-3">
-                    CLIs, SDKs, and APIs that glue tools together across teams.
+                    Internal products for developers and technical teams:
+                    services, CLIs, APIs, and platform glue that make work more
+                    reliable and easier to ship.
                   </p>
-                  <ul class="small mb-0">
-                    <li>CI/CD and release workflows</li>
-                    <li>Environment & dependency management</li>
-                    <li>Observability around renders & assets</li>
+                  <ul class="list-clean small mb-0">
+                    <li>CLIs, SDKs, and API-driven integrations.</li>
+                    <li>Environment, release, and CI/CD workflows.</li>
+                    <li>Observability, supportability, and developer speed.</li>
                   </ul>
                 </div>
               </div>
@@ -297,17 +388,18 @@
               <div class="col-md-4">
                 <div class="service-card h-100">
                   <p class="service-icon">
-                    <i class="fa-solid fa-video"></i>
+                    <i class="fa-solid fa-gamepad"></i>
                   </p>
-                  <h3 class="h5 mb-2">Content & Game Automation</h3>
+                  <h3 class="h5 mb-2">Creative Tech &amp; Game Tooling</h3>
                   <p class="small text-muted mb-3">
-                    Tools for people who ship content and games on the
-                    internet.
+                    Technical systems for creative and game teams, from tooling
+                    around content workflows to framework-style support for
+                    small game production.
                   </p>
-                  <ul class="small mb-0">
-                    <li>Gameplay capture orchestration (OBS + games)</li>
-                    <li>Manifest-driven sessions & asset organization</li>
-                    <li>Small game experiments & tooling</li>
+                  <ul class="list-clean small mb-0">
+                    <li>Game tools, capture flows, and production utilities.</li>
+                    <li>Creative workflow support without bloated process.</li>
+                    <li>Frameworks and tooling that make shipping easier.</li>
                   </ul>
                 </div>
               </div>
@@ -315,15 +407,15 @@
           </div>
         </section>
 
-        <!-- WORK -->
         <section id="work" class="section-border">
           <div class="container py-5">
             <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-end mb-4 gap-3">
               <div>
-                <h2 class="section-title mb-2">Selected work</h2>
+                <p class="section-kicker mb-2">Selected work</p>
+                <h2 class="section-title mb-2">Projects with real product proof</h2>
                 <p class="text-muted mb-0">
-                  A mix of production tools, experimental engines, and older
-                  projects that still pull their weight as portfolio pieces.
+                  The projects below are the clearest expression of how I think
+                  about tooling, systems design, AI workflows, and product feel.
                 </p>
               </div>
               <a
@@ -337,24 +429,49 @@
               </a>
             </div>
 
+            <p class="small text-muted mb-4">
+              Some current R&amp;D work is still private or being packaged for
+              release, but it reflects the direction I&apos;m pushing hardest.
+            </p>
+
             <div class="row gy-4">
-              <!-- Trivox -->
-              <div class="col-md-6 col-lg-4">
-                <article class="project-card h-100">
+              <div class="col-12">
+                <article class="project-card featured-project h-100">
+                  <div class="project-proof-grid project-proof-grid-wide mb-4">
+                    <div class="project-proof-item">
+                      <span class="project-proof-label">Surface</span>
+                      <strong>Workflow ecosystem</strong>
+                    </div>
+                    <div class="project-proof-item">
+                      <span class="project-proof-label">Artifacts</span>
+                      <strong>Docs, CI/CD, repos</strong>
+                    </div>
+                    <div class="project-proof-item">
+                      <span class="project-proof-label">Intent</span>
+                      <strong>Operational leverage</strong>
+                    </div>
+                  </div>
+
                   <header class="mb-2 d-flex justify-content-between align-items-start gap-3">
-                    <h3 class="h5 mb-0">Trivox · Content Pipeline Conductor</h3>
-                    <span class="pill pill-outline small">In progress</span>
+                    <h3 class="h5 mb-0">Trivox</h3>
+                    <span class="pill pill-outline small">Flagship ecosystem</span>
                   </header>
                   <p class="small text-muted mb-2">
-                    Modular Python framework for orchestrating gameplay capture,
-                    manifest-driven sessions, and asset organization. Automated
-                    docs and reusable CI/CD workflows baked in.
+                    Trivox is my main ecosystem for AI-powered tools, workflow
+                    systems, capture automation, and reusable infrastructure for
+                    creators and small teams. It brings together the parts of my
+                    work I care most about: product-minded tooling, developer
+                    workflows, automation, documentation, and creative-tech
+                    systems.
                   </p>
-                  <p class="small text-muted mb-2">
-                    Goal: give solo creators & small teams “big studio”
-                    pipelines without big studio pain.
+                  <p class="small text-muted mb-3">
+                    It matters because it shows how I approach tooling as a
+                    product surface, not just a pile of scripts. The goal is to
+                    build practical systems that give smaller teams the clarity,
+                    repeatability, and leverage usually reserved for larger
+                    internal platforms.
                   </p>
-                  <div class="d-flex flex-wrap gap-2 small mb-2">
+                  <div class="d-flex flex-wrap gap-2 small mb-3">
                     <a
                       href="https://trivox.io"
                       class="text-accent text-decoration-none"
@@ -376,32 +493,43 @@
                   </div>
                   <div class="d-flex flex-wrap gap-2 small">
                     <span class="pill pill-soft">Python</span>
-                    <span class="pill pill-soft">CLI & desktop</span>
-                    <span class="pill pill-soft">OBS / capture</span>
-                    <span class="pill pill-soft">Docs & CI/CD</span>
+                    <span class="pill pill-soft">AI workflows</span>
+                    <span class="pill pill-soft">Internal tooling</span>
+                    <span class="pill pill-soft">Capture systems</span>
+                    <span class="pill pill-soft">Docs &amp; CI/CD</span>
                   </div>
                 </article>
               </div>
 
-              <!-- Mini Arcade / Deja Bounce -->
               <div class="col-md-6 col-lg-4">
                 <article class="project-card h-100">
+                  <div class="project-proof-grid mb-3">
+                    <div class="project-proof-item">
+                      <span class="project-proof-label">Demo</span>
+                      <strong>Playable release</strong>
+                    </div>
+                    <div class="project-proof-item">
+                      <span class="project-proof-label">Package</span>
+                      <strong>PyPI artifacts</strong>
+                    </div>
+                  </div>
                   <header class="mb-2">
-                    <h3 class="h5 mb-0">Mini Arcade + Deja Bounce</h3>
+                    <h3 class="h5 mb-0">Mini Arcade</h3>
                     <p class="small text-muted mb-0">
-                      Python-first mini game engine & PS1-style Pong.
+                      Python-first game framework and release playground.
                     </p>
                   </header>
                   <p class="small text-muted mb-2">
-                    <strong>mini-arcade-core</strong> and a native SDL2 backend
-                    powering small 2D games, starting with Deja Bounce (a
-                    stylized Pong) and a Space Invaders variant.
+                    <strong>mini-arcade-core</strong> and its backends are
+                    where I test engine architecture, reusable gameplay systems,
+                    and the tooling needed to ship small games cleanly.
                   </p>
-                  <p class="small text-muted mb-2">
-                    Focus on clean APIs, reusable physics, and tools that feel
-                    more like a framework than a throwaway game jam project.
+                  <p class="small text-muted mb-3">
+                    It matters because it turns game-tooling ideas into working
+                    software with real constraints, real releases, and a strong
+                    bias toward framework quality over throwaway prototypes.
                   </p>
-                  <div class="d-flex flex-wrap gap-2 small mb-2">
+                  <div class="d-flex flex-wrap gap-2 small mb-3">
                     <a
                       href="https://pypi.org/project/mini-arcade-core/"
                       class="text-accent text-decoration-none"
@@ -433,133 +561,76 @@
                   <div class="d-flex flex-wrap gap-2 small">
                     <span class="pill pill-soft">Python</span>
                     <span class="pill pill-soft">C++ / SDL2</span>
-                    <span class="pill pill-soft">Game engine R&D</span>
+                    <span class="pill pill-soft">Game tooling</span>
                   </div>
                 </article>
               </div>
 
-              <!-- Penrose Paradox -->
               <div class="col-md-6 col-lg-4">
                 <article class="project-card h-100">
+                  <div class="project-proof-grid mb-3">
+                    <div class="project-proof-item">
+                      <span class="project-proof-label">Mode</span>
+                      <strong>Private R&amp;D</strong>
+                    </div>
+                    <div class="project-proof-item">
+                      <span class="project-proof-label">Focus</span>
+                      <strong>Pre-production systems</strong>
+                    </div>
+                  </div>
                   <header class="mb-2 d-flex justify-content-between align-items-start gap-3">
-                    <h3 class="h5 mb-0">Penrose Paradox</h3>
-                    <a
-                      href="https://github.com/ProjectPenrose/paradox"
-                      class="small text-accent text-decoration-none"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      GitHub
-                      <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
-                    </a>
+                    <h3 class="h5 mb-0">Ashframe</h3>
+                    <span class="pill pill-outline small">Private R&amp;D</span>
                   </header>
                   <p class="small text-muted mb-2">
-                    JavaScript library to build reactive components without JSX
-                    – just JavaScript objects. Built to experiment with UI
-                    reactivity from first principles.
+                    Ashframe is an AI-driven tooling project aimed at
+                    pre-production and workflow support, with an emphasis on
+                    turning loose creative process into something more
+                    structured, reusable, and operational.
                   </p>
-                  <div class="d-flex flex-wrap gap-2 small mb-2">
-                    <a
-                      href="https://www.npmjs.com/package/penrose-paradox"
-                      class="text-accent text-decoration-none"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      npm package
-                      <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
-                    </a>
-                  </div>
+                  <p class="small text-muted mb-3">
+                    It matters because it pushes my tools-engineering work
+                    further into AI systems while staying grounded in practical
+                    team workflows instead of one-off prompt experiments.
+                  </p>
                   <div class="d-flex flex-wrap gap-2 small">
-                    <span class="pill pill-soft">JavaScript</span>
-                    <span class="pill pill-soft">Reactive UI</span>
-                    <span class="pill pill-soft">Frontend R&D</span>
+                    <span class="pill pill-soft">AI tooling</span>
+                    <span class="pill pill-soft">Pre-production</span>
+                    <span class="pill pill-soft">Workflow design</span>
                   </div>
                 </article>
               </div>
 
-              <!-- Masamo Text Editor -->
               <div class="col-md-6 col-lg-4">
                 <article class="project-card h-100">
+                  <div class="project-proof-grid mb-3">
+                    <div class="project-proof-item">
+                      <span class="project-proof-label">Mode</span>
+                      <strong>Private R&amp;D</strong>
+                    </div>
+                    <div class="project-proof-item">
+                      <span class="project-proof-label">Focus</span>
+                      <strong>LLM workflow tooling</strong>
+                    </div>
+                  </div>
                   <header class="mb-2 d-flex justify-content-between align-items-start gap-3">
-                    <h3 class="h5 mb-0">Masamo Text Editor</h3>
-                    <a
-                      href="https://github.com/k2con/masamo-text-editor"
-                      class="small text-accent text-decoration-none"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      GitHub
-                      <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
-                    </a>
+                    <h3 class="h5 mb-0">llmix</h3>
+                    <span class="pill pill-outline small">Private R&amp;D</span>
                   </header>
                   <p class="small text-muted mb-2">
-                    JavaScript WYSIWYG editor for rich-text content. A playground
-                    for editor UX, extensibility, and “feel” rather than just
-                    another toolbar.
+                    llmix is an AI workflow experiment focused on packaging LLM
+                    capabilities into cleaner, more repeatable tooling flows for
+                    creative and technical work.
+                  </p>
+                  <p class="small text-muted mb-3">
+                    It matters because it reflects the shift from ad-hoc AI use
+                    toward developer-friendly interfaces and systems teams can
+                    actually build on.
                   </p>
                   <div class="d-flex flex-wrap gap-2 small">
-                    <span class="pill pill-soft">JavaScript</span>
-                    <span class="pill pill-soft">Editor UX</span>
-                  </div>
-                </article>
-              </div>
-
-              <!-- Evolving Ideas -->
-              <div class="col-md-6 col-lg-4">
-                <article class="project-card h-100">
-                  <header class="mb-2">
-                    <h3 class="h5 mb-0">Evolving Ideas</h3>
-                    <p class="small text-muted mb-0">
-                      Python assistant for turning messy thoughts into
-                      structured output.
-                    </p>
-                  </header>
-                  <p class="small text-muted mb-2">
-                    Personal R&D tool to help creatives iterate on concepts,
-                    prompts, and storylines using automation instead of just a
-                    blank page.
-                  </p>
-                  <div class="d-flex flex-wrap gap-2 small">
-                    <span class="pill pill-soft">Python</span>
-                    <span class="pill pill-soft">Content tooling</span>
-                  </div>
-                </article>
-              </div>
-
-              <!-- LBTC API -->
-              <div class="col-md-6 col-lg-4">
-                <article class="project-card h-100">
-                  <header class="mb-2 d-flex justify-content-between align-items-start gap-3">
-                    <h3 class="h5 mb-0">LBTC API (2018)</h3>
-                    <a
-                      href="https://github.com/Unizend/lbtc-api"
-                      class="small text-accent text-decoration-none"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      GitHub
-                      <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
-                    </a>
-                  </header>
-                  <p class="small text-muted mb-2">
-                    Node.js API wrapper for LocalBitcoins. Outdated now, but a
-                    solid example of early backend work and how I’ve been
-                    thinking about APIs for a while.
-                  </p>
-                  <div class="d-flex flex-wrap gap-2 small mb-2">
-                    <a
-                      href="https://www.npmjs.com/package/lbtc-api"
-                      class="text-accent text-decoration-none"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      npm package
-                      <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
-                    </a>
-                  </div>
-                  <div class="d-flex flex-wrap gap-2 small">
-                    <span class="pill pill-soft">Node.js</span>
-                    <span class="pill pill-soft">REST APIs</span>
+                    <span class="pill pill-soft">LLM workflows</span>
+                    <span class="pill pill-soft">Reusable tooling</span>
+                    <span class="pill pill-soft">AI systems</span>
                   </div>
                 </article>
               </div>
@@ -567,98 +638,220 @@
           </div>
         </section>
 
-        <!-- STACK -->
-        <section id="stack" class="section-border">
+        <section id="proof" class="section-border">
           <div class="container py-5">
             <div class="row mb-4">
               <div class="col-lg-8">
-                <h2 class="section-title mb-2">Stack & toys</h2>
+                <p class="section-kicker mb-2">Proof surfaces</p>
+                <h2 class="section-title mb-3">Demos, artifacts, and engineering notes</h2>
                 <p class="text-muted mb-0">
-                  The stuff I reach for a lot, plus a few things I’m leveling up
-                  next.
+                  The site should feel credible because it points to shipped
+                  work, technical artifacts, and thinking you can inspect, not
+                  because it relies on visual noise.
                 </p>
               </div>
             </div>
 
             <div class="row gy-4">
               <div class="col-md-6 col-lg-4">
-                <h3 class="h6 text-uppercase text-muted mb-2">Languages</h3>
-                <div class="d-flex flex-wrap gap-2">
-                  <span class="pill pill-soft">Python</span>
-                  <span class="pill pill-soft">JavaScript</span>
-                  <span class="pill pill-soft">TypeScript</span>
-                  <span class="pill pill-soft">Node.js</span>
-                  <span class="pill pill-soft">C++ (learning)</span>
+                <article class="proof-card h-100">
+                  <p class="surface-label text-accent mb-2">Case studies</p>
+                  <h3 class="h5 mb-3">Systems explained like products</h3>
+                  <p class="small text-muted mb-3">
+                    Breakdown space for how tools are shaped, why workflows are
+                    modeled the way they are, and what tradeoffs matter in real
+                    engineering teams.
+                  </p>
+                  <ul class="list-clean small mb-3">
+                    <li>Trivox ecosystem architecture</li>
+                    <li>Mini Arcade framework decisions</li>
+                    <li>AI workflow systems for smaller teams</li>
+                  </ul>
+                  <div class="d-flex flex-wrap gap-2 small">
+                    <a
+                      href="https://trivox.io"
+                      class="text-accent text-decoration-none"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Visit Trivox
+                    </a>
+                    <a
+                      href="https://github.com/trivox-io"
+                      class="text-accent text-decoration-none"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Browse repos
+                    </a>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col-md-6 col-lg-4">
+                <article class="proof-card h-100">
+                  <p class="surface-label text-accent mb-2">Demos &amp; releases</p>
+                  <h3 class="h5 mb-3">Working software over mock momentum</h3>
+                  <p class="small text-muted mb-3">
+                    Playable releases, published packages, and live artifacts
+                    that show the systems are real and already being exercised.
+                  </p>
+                  <ul class="list-clean small mb-3">
+                    <li>Deja Bounce playable demo</li>
+                    <li>mini-arcade-core package</li>
+                    <li>Native backend package</li>
+                  </ul>
+                  <div class="d-flex flex-wrap gap-2 small">
+                    <a
+                      href="https://alexsc6955.itch.io/dejabounce"
+                      class="text-accent text-decoration-none"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Play demo
+                    </a>
+                    <a
+                      href="https://pypi.org/project/mini-arcade-core/"
+                      class="text-accent text-decoration-none"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View package
+                    </a>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col-md-6 col-lg-4">
+                <article class="proof-card h-100">
+                  <p class="surface-label text-accent mb-2">Engineering notes</p>
+                  <h3 class="h5 mb-3">Writing in progress, grounded in implementation</h3>
+                  <p class="small text-muted mb-3">
+                    Notes and essays around internal platforms, AI-assisted
+                    workflows, game-tooling architecture, and the shape of tools
+                    people actually want to keep using.
+                  </p>
+                  <ul class="list-clean small mb-0">
+                    <li>Internal platform design</li>
+                    <li>Workflow ergonomics for AI systems</li>
+                    <li>Tooling for creative and game teams</li>
+                  </ul>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="stack" class="section-border">
+          <div class="container py-5">
+            <div class="row mb-4">
+              <div class="col-lg-8">
+                <p class="section-kicker mb-2">Core stack</p>
+                <h2 class="section-title mb-2">Tools I reach for to build real systems</h2>
+                <p class="text-muted mb-0">
+                  The technologies I use most when building platforms,
+                  automation, and creative/game-tech systems.
+                </p>
+              </div>
+            </div>
+
+            <div class="row gy-4">
+              <div class="col-md-6 col-lg-4">
+                <div class="stack-card">
+                  <h3 class="h6 text-uppercase text-muted mb-2">Languages</h3>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="pill pill-soft">Python</span>
+                    <span class="pill pill-soft">JavaScript</span>
+                    <span class="pill pill-soft">TypeScript</span>
+                    <span class="pill pill-soft">Node.js</span>
+                    <span class="pill pill-soft">C++</span>
+                  </div>
                 </div>
               </div>
 
               <div class="col-md-6 col-lg-4">
-                <h3 class="h6 text-uppercase text-muted mb-2">DCCs & Engines</h3>
-                <div class="d-flex flex-wrap gap-2">
-                  <span class="pill pill-soft">Maya</span>
-                  <span class="pill pill-soft">Houdini</span>
-                  <span class="pill pill-soft">Blender</span>
-                  <span class="pill pill-soft">Unreal Engine</span>
-                  <span class="pill pill-soft">DaVinci Resolve</span>
+                <div class="stack-card">
+                  <h3 class="h6 text-uppercase text-muted mb-2">
+                    Creative &amp; Engine Context
+                  </h3>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="pill pill-soft">Unreal Engine</span>
+                    <span class="pill pill-soft">Blender</span>
+                    <span class="pill pill-soft">Maya</span>
+                    <span class="pill pill-soft">Houdini</span>
+                    <span class="pill pill-soft">DaVinci Resolve</span>
+                  </div>
                 </div>
               </div>
 
               <div class="col-md-6 col-lg-4">
-                <h3 class="h6 text-uppercase text-muted mb-2">
-                  Backend & Infra
-                </h3>
-                <div class="d-flex flex-wrap gap-2">
-                  <span class="pill pill-soft">Django</span>
-                  <span class="pill pill-soft">FastAPI</span>
-                  <span class="pill pill-soft">Docker</span>
-                  <span class="pill pill-soft">GitHub Actions</span>
-                  <span class="pill pill-soft">MySQL / PostgreSQL</span>
-                  <span class="pill pill-soft">MongoDB</span>
+                <div class="stack-card">
+                  <h3 class="h6 text-uppercase text-muted mb-2">
+                    Backend &amp; Infra
+                  </h3>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="pill pill-soft">FastAPI</span>
+                    <span class="pill pill-soft">Django</span>
+                    <span class="pill pill-soft">Docker</span>
+                    <span class="pill pill-soft">GitHub Actions</span>
+                    <span class="pill pill-soft">MySQL / PostgreSQL</span>
+                    <span class="pill pill-soft">MongoDB</span>
+                  </div>
                 </div>
               </div>
 
               <div class="col-md-6 col-lg-4">
-                <h3 class="h6 text-uppercase text-muted mb-2">Tools & UX</h3>
-                <div class="d-flex flex-wrap gap-2">
-                  <span class="pill pill-soft">Qt / PySide</span>
-                  <span class="pill pill-soft">React</span>
-                  <span class="pill pill-soft">Bootstrap</span>
-                  <span class="pill pill-soft">WebSockets</span>
-                  <span class="pill pill-soft">ShotGrid Python API</span>
-                  <span class="pill pill-soft">Perforce Python API</span>
-                  <span class="pill pill-soft">Deadline</span>
+                <div class="stack-card">
+                  <h3 class="h6 text-uppercase text-muted mb-2">
+                    Tooling &amp; Interfaces
+                  </h3>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="pill pill-soft">Qt / PySide</span>
+                    <span class="pill pill-soft">React</span>
+                    <span class="pill pill-soft">Bootstrap</span>
+                    <span class="pill pill-soft">WebSockets</span>
+                    <span class="pill pill-soft">ShotGrid Python API</span>
+                    <span class="pill pill-soft">Perforce Python API</span>
+                    <span class="pill pill-soft">Deadline</span>
+                  </div>
                 </div>
               </div>
 
               <div class="col-md-6 col-lg-4">
-                <h3 class="h6 text-uppercase text-muted mb-2">Building next</h3>
-                <div class="d-flex flex-wrap gap-2">
-                  <span class="pill pill-soft">Software architecture</span>
-                  <span class="pill pill-soft">Data & ML basics</span>
-                  <span class="pill pill-soft">Unreal gameplay systems</span>
-                  <span class="pill pill-soft">Better dev tools</span>
+                <div class="stack-card">
+                  <h3 class="h6 text-uppercase text-muted mb-2">
+                    Leaning harder into
+                  </h3>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="pill pill-soft">AI engineering</span>
+                    <span class="pill pill-soft">Software architecture</span>
+                    <span class="pill pill-soft">Pre-production tooling</span>
+                    <span class="pill pill-soft">Unreal gameplay systems</span>
+                    <span class="pill pill-soft">Developer workflows</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- CONTACT -->
         <section id="contact" class="section-border">
           <div class="container py-5">
             <div class="row gy-4 align-items-center">
               <div class="col-lg-7">
-                <h2 class="section-title mb-3">Let’s build something useful</h2>
+                <p class="section-kicker mb-2">Contact</p>
+                <h2 class="section-title mb-3">
+                  Let&apos;s build tools people actually enjoy using.
+                </h2>
                 <p class="text-muted mb-3">
-                  If you’re working on tools & pipelines for games / VFX,
-                  internal platforms for creative teams, or a small studio that
-                  wants “big studio” workflows without the drama, we’ll get
-                  along.
+                  If you&apos;re building internal platforms, AI-assisted
+                  workflow tools, developer tooling, or technical systems for
+                  creative and game teams, I&apos;d love to hear about it.
                 </p>
                 <p class="text-muted mb-4">
-                  I’m happy to chat about roles, collaborations, or weird
-                  game-adjacent experiments where Python is allowed to do
-                  dangerous amounts of work.
+                  I&apos;m especially interested in work where product thinking
+                  matters as much as implementation quality, and where better
+                  tools can unlock real velocity for the people using them.
                 </p>
 
                 <div class="d-flex flex-wrap gap-3">
@@ -686,13 +879,12 @@
               <div class="col-lg-5">
                 <div class="card glass-card border-0">
                   <div class="card-body p-4 small">
-                    <p class="text-accent text-uppercase mb-2">
-                      TL;DR, who am I?
-                    </p>
-                    <ul class="mb-0">
-                      <li>Senior Python dev in the content creation world.</li>
-                      <li>Tooling & pipeline brain with a goth / game kid soul.</li>
-                      <li>Big fan of clean APIs, good logs, and fewer 3am pages.</li>
+                    <p class="surface-label text-accent mb-3">Best fit</p>
+                    <ul class="list-clean mb-0">
+                      <li>Senior engineer focused on tools and workflow systems.</li>
+                      <li>Strong in internal platforms and developer tooling.</li>
+                      <li>Building deeper into AI, creative tech, and game tooling.</li>
+                      <li>Big on clean APIs, useful interfaces, and reliable automation.</li>
                     </ul>
                   </div>
                 </div>
@@ -702,29 +894,26 @@
         </section>
       </main>
 
-      <!-- FOOTER -->
       <footer class="border-top border-dark py-3 footer">
         <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 small text-muted">
           <span>&copy; <span id="year"></span> · Santiago Rincón</span>
-          <span>Built with Python energy and a bit of chaos.</span>
+          <span>Systems, shipped with intent.</span>
         </div>
       </footer>
 
-      <!-- Watcher / background process -->
       <button
         class="watcher"
         type="button"
-        aria-label="Background process watcher"
+        aria-label="System monitor"
       >
         <span class="watcher-core"></span>
         <span class="watcher-label" id="watcher-label">Idle</span>
         <span class="watcher-tooltip" id="watcher-tooltip">
-          Background process: idle
+          System monitor: nominal
         </span>
       </button>
     </div>
 
-    <!-- Scripts -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
